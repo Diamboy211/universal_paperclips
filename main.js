@@ -40,7 +40,7 @@ function toggleWireBuyer(){
 function buyWire(){
     if(funds >= wireCost){
         wirePriceTimer = 0;
-        wire = wire + wireSupply;
+        wire = wire + wireSupply * 2;
         funds = funds - wireCost;
         wirePurchase = wirePurchase + 1;
         wireBasePrice = wireBasePrice + .05;
@@ -1626,10 +1626,10 @@ function clipClick(number){
         number = wire;
         }    
         
-    clips = clips + number;
-    unsoldClips = unsoldClips + number;
+    clips = clips + number * 2;
+    unsoldClips = unsoldClips + number * 2;
     wire = wire - number;
-    unusedClips = unusedClips + number;
+    unusedClips = unusedClips + number * 2;
     
     if(humanFlag==0){
     document.getElementById("unusedClipsDisplay").innerHTML = numberCruncher(unusedClips);    
